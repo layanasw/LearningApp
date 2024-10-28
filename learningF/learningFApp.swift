@@ -11,7 +11,7 @@ import SwiftUI
 struct learningFApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           GreetPage()
         }
     }
 }
