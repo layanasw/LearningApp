@@ -15,7 +15,7 @@ struct GreetPage: View {
             VStack(spacing: 30) {
                 // Flame icon with circle background
                 Circle()
-                    .fill(Color.orange)
+                    .fill(Color(hex: "#2C2C2E") )
                     .frame(width: 120, height: 120)
                     .overlay(
                         Text("🔥")
@@ -57,26 +57,28 @@ struct GreetPage: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    HStack(spacing: 16) {
+                    HStack(spacing: 14) {
                         ForEach(["Week", "Month", "Year"], id: \.self) { period in
                             Button(action: { vm.duration = period }) {
                                 Text(period)
                                     .frame(width: 80, height: 40)
-                                    .background(vm.duration == period ? Color.orange : Color.gray.opacity(0.3))
+                                    .background(vm.duration == period ? Color(hex: "#FF9F0A")  : Color.gray.opacity(0.3))
                                     .foregroundColor(vm.duration == period ? .black : .orange)
                                     .cornerRadius(10)
+                                
                             }
                         }
                     }
                 }
-                .padding(.horizontal, 30)
+                .padding(.horizontal, 4)
+                .frame(maxWidth: .infinity, alignment: .leading)
                 
                 // Start button
                 NavigationLink(destination: LogdayPage().navigationBarBackButtonHidden(true)) {
                     Text("Start")
                         .fontWeight(.bold)
                         .frame(maxWidth: 150, minHeight: 55)
-                        .background(Color.orange)
+                        .background(Color(hex: "#FF9F0A"))
                         .foregroundColor(.black)
                         .cornerRadius(5)
                         .padding(.horizontal, 30)

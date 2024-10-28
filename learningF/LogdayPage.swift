@@ -149,26 +149,26 @@ struct LogdayPage: View {
             // Log Today Button
             Button(action: vm.toggleLogDay) {
                 Circle()
-                    .fill(vm.dayFrozen ? Color.blue : (vm.dayLogged ? Color.orange.opacity(0.9) : Color.orange))
+                    .fill(vm.dayFrozen ? Color(hex: "#021F3D") : (vm.dayLogged ? Color(hex: "#422800") : Color(hex: "#FF9F0A")))
                     .frame(width: 250, height: 250)
                     .overlay(
-                        Text(vm.dayFrozen ? "Day Frozen" : (vm.dayLogged ? "Learned Today" : "Log today as Learned"))
-                            .foregroundColor(.white)
+                        Text(vm.dayFrozen ? "Day            Freezed"  : (vm.dayLogged ? "Learned Today" : "Log today as Learned"))
+                            .foregroundColor(vm.dayFrozen ? .blue : (vm.dayLogged ? .orange : .black)) // Change font color based on status
                             .font(.largeTitle)
                             .bold()
                     )
             }
             .padding(.top, 20)
             .disabled(vm.dayFrozen)
-
+            
             // Freeze Day Button
             Button(action: vm.toggleFreezeDay) {
                 RoundedRectangle(cornerRadius: 10)
-                    .fill(vm.dayFrozen ? Color.gray : Color.blue)
+                    .fill(vm.dayFrozen ? Color(hex: "#2C2C2E") : Color(hex: "#C1DDFF"))
                     .frame(width: 150, height: 50)
                     .overlay(
                         Text("Freeze day")
-                            .foregroundColor(.white)
+                            .foregroundColor(.blue)
                             .font(.headline)
                     )
             }
@@ -191,3 +191,4 @@ struct LogdayPage_Previews: PreviewProvider {
         LogdayPage()
     }
 }
+//2C2C2E grey

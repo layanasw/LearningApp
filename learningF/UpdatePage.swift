@@ -47,7 +47,7 @@ struct UpdatePage: View {
                     }) {
                         Text("Update")
                             .font(.title3)
-                            .foregroundColor(.orange)
+                            .foregroundColor(Color(hex: "#FF9F0A"))
                     }
                 }
                 .padding(.horizontal)
@@ -78,6 +78,7 @@ struct UpdatePage: View {
                         .font(.system(size: 18, weight: .bold))
                         .foregroundColor(.white)
                         .padding(.top, 10)
+                    
                     HStack(spacing: 16) {
                         Button(action: {
                             selectedTimeframe = "Week"
@@ -86,7 +87,7 @@ struct UpdatePage: View {
                                 .foregroundColor(selectedTimeframe == "Week" ? .black : .orange)
                                 .padding(.vertical, 8)
                                 .padding(.horizontal, 16)
-                                .background(selectedTimeframe == "Week" ? Color.orange : Color.gray)
+                                .background(selectedTimeframe == "Week" ? Color.orange : Color(hex: "#2C2C2E"))
                                 .cornerRadius(8)
                         }
                         
@@ -97,7 +98,7 @@ struct UpdatePage: View {
                                 .foregroundColor(selectedTimeframe == "Month" ? .black : .orange)
                                 .padding(.vertical, 8)
                                 .padding(.horizontal, 16)
-                                .background(selectedTimeframe == "Month" ? Color.orange : Color.gray)
+                                .background(selectedTimeframe == "Month" ? Color.orange : Color(hex: "#2C2C2E"))
                                 .cornerRadius(8)
                         }
                         
@@ -108,12 +109,15 @@ struct UpdatePage: View {
                                 .foregroundColor(selectedTimeframe == "Year" ? .black : .orange)
                                 .padding(.vertical, 8)
                                 .padding(.horizontal, 16)
-                                .background(selectedTimeframe == "Year" ? Color.orange : Color.gray)
+                                .background(selectedTimeframe == "Year" ? Color.orange : Color(hex: "#2C2C2E"))
                                 .cornerRadius(8)
                         }
+                        
+                        Spacer() // Pushes the buttons to the left
                     }
                 }
                 .padding(.horizontal, 20)
+
                 
                 Spacer()
             }
@@ -130,3 +134,4 @@ struct UpdatePage_Previews: PreviewProvider {
         }
     }
 }
+//2C2C2E
